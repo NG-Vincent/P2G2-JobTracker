@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS job_tacker_db;
+DROP DATABASE IF EXISTS job_tracker_db;
 
-CREATE DATABASE job_tacker_db;
+CREATE DATABASE job_tracker_db;
