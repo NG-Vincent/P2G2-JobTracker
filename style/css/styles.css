@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #7C8BFF;
 }
 
 .container {
@@ -17,4 +18,28 @@ body {
 
 .draggable.dragging {
   opacity: 0.5;
+}
+
+#newObject {
+  background-color: #E7F8D8;
+  height: auto;
+  width: 100%;
+}
+
+#currentObject {
+  background-color: #FFFDE3;
+  height: auto;
+  width: 100%;
+}
+
+#completedObject {
+  background-color: #D5E2EF;
+  height: auto;
+  width: 100%;
+}
+
+#overdueObject {
+  background-color: #FFE7E0;
+  height: auto;
+  width: 100%;
 }
