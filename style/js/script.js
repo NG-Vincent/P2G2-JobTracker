@@ -62,12 +62,11 @@ function getDragAfterElement(container, y) {
 // !! TASK MANAGEMENT !!
 
 // create job or task
-var createJob = (jobText,jobDate,jobList) => {
+(jobText,jobDate,jobList) =>  {
   var jobList = $("<li>").addClass("list-group-item");
   var taskSpan = $("<span>")
-    .text(taskDate);
+    .text(jobDate);
   var pElement = $("<p>")
-    .addClass("m-1")
     .text(jobText);
 
   jobList.append(jobSpan, pElement);
@@ -101,5 +100,7 @@ openJobs => {
 // save jobs
 saveJobs => {
   localStorage.setItem("jobs", JSON.stringify(jobs));
-
 };
+
+// edit jobs
+

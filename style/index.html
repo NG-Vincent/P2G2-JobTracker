@@ -16,15 +16,20 @@
   <body>
 
     <div class="manageJob">
-      <button class="btn btn-block btn-add" id="createJob"> Create Job
-        <button class="btn btn-block btn-delete" id="deleteJob"> Delete Job
+     
     </div>
 
     <div class="container" id="newObject">
-      <h2>New</h2> 
+      <h2>New</h2>
+      <div button class="btn btn-block btn-add" id="createJob"> Create Job </button>
+      </div>
+    </div>
+      
       <!-- draggable=true allows for elements to be dragged using the drag and drop api -->
-      <p class="draggable" draggable="true">1</p>
-      <p class="draggable" draggable="true">2</p>
+      <div class="draggable" draggable="true">
+        <p>Task 1</p>
+      <button class="btn btn-block btn-delete" id="deleteJob"> Delete Job </button>
+      <button class="btn btn-block btn-edit" id="editJob"> Edit</button>
     </div>
     <div class="container" id="currentObject">
       <h2>Current</h2>
