@@ -1,6 +1,7 @@
 // What we can drag and where we can drop
 const draggables = document.querySelectorAll(".draggable");
 const containers = document.querySelectorAll(".container");
+var jobs = {};
 
 draggables.forEach((draggable) => {
   // Gets fired as soon as we start dragging an element
@@ -56,3 +57,49 @@ function getDragAfterElement(container, y) {
     { offset: Number.NEGATIVE_INFINITY }
   ).element;
 }
+
+
+// !! TASK MANAGEMENT !!
+
+// create job or task
+var createJob = (jobText,jobDate,jobList) => {
+  var jobList = $("<li>").addClass("list-group-item");
+  var taskSpan = $("<span>")
+    .text(taskDate);
+  var pElement = $("<p>")
+    .addClass("m-1")
+    .text(jobText);
+
+  jobList.append(jobSpan, pElement);
+
+  auditTask(jobList);
+
+  $("#list-" + jobList).append(jobList);
+};
+
+// load job saved in localStorage
+openJobs => {
+  jobs = JSON.parse(localStorage.getItem("jobs"));
+
+  if (!jobs) {
+    jobs = {
+      newObject: [],
+      currentObject:[],
+      completedObject:[],
+      overdueObject:[]
+    };
+  }
+
+  $.each(jobs, (list, arr) => {
+    arr.forEach(function(job) {
+      createJob(job.text, job.date, list);
+    });
+
+  });
+};
+
+// save jobs
+saveJobs => {
+  localStorage.setItem("jobs", JSON.stringify(jobs));
+
+};
