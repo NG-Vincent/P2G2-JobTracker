@@ -86,6 +86,14 @@ form.addEventListener("submit", (e) => {
   addEvent();
 });
 
+// Relocate to kanban page on click
+document.body.addEventListener("click", (e) => {
+  const chosenEvent = e.target;
+  if (chosenEvent.classList.contains("fc-event-title")) {
+    window.location.replace("/kanban");
+  }
+});
+
 // UPDATE EVENT
 // document.body.addEventListener("click", (e) => {
 //   const chosenEvent = e.target;
