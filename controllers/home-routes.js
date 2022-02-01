@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 
 // GET KANBAN PAGE
 router.get("/kanban", (req, res) => {
-  res.render("kanban", { layout: "kanban" });
+  res.render("kanban", { layout: "kanban", url: "/" });
 });
 
 // GET ACCOUNT-SETTINGS PAGE
