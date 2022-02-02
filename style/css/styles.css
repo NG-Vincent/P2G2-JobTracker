@@ -12,7 +12,7 @@ header {
   flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
-  background-image: ("../style/images/p2j2.png");
+  background-image:url("../images/p2j2.jpg");
   background-size: cover;
 }
 

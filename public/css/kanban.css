@@ -4,13 +4,13 @@ body {
 }
 
 header {
-  padding: 20px 35px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
-  background-image: ("../style/images/p2j2.png");
+  background-image:url("../images/p2j2.png");
   background-size: cover;
 }
 
