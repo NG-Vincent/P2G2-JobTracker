@@ -1,26 +1,56 @@
-<header>
-  <nav>
-    <h2>P2G2 Job-Tracker</h2>
-    <ul>
-      <li><a href="/account">Account settings</a></li>
-      <li><a href="/calendar">Calendar</a></li>
-      <li><a href="/">Logout</a></li>
-    </ul>
-  </nav>
-  <button><a href="/calendar">Calendar</a></button>
-</header>
-<body>
-  <div class="container" id="newObject">
-    <h2>New</h2>
-    <!-- draggable=true allows for elements to be dragged using the drag and drop api -->
-  </div>
-  <div class="container" id="currentObject">
-    <h2>Current</h2>
-  </div>
-  <div class="container" id="completedObject">
-    <h2>Completed </h2>
-  </div>
-  <div class="container" id="overdueObject">
-    <h2>Overdue</h2>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/d2846d24fd.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/script.js" defer></script>
+    <!-- boot strap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <h2>P2G2 Job-Tracker</h2>
+        <ul>
+          <li><a href="/account">Account settings</a></li>
+          <li><a href="/calendar">Calendar</a></li>
+          <li><a href="/">Logout</a></li>
+        </ul>
+      </nav>
+      <button><a href="/calendar">Calendar</a></button>
+    </header>
+    <div class="container" id="newObject">
+      <h2>New <button i class="fas fa-plus-circle"></i></button></h2>
+    </div>
+      
+      <!-- draggable=true allows for elements to be dragged using the drag and drop api -->
+    <div class="draggable" draggable="true">
+      <h4>Task 1</h4>
+      <p> Test </p>
+      <button i class="fas fa-edit"></button></i>
+      <button i class="fas fa-trash"></i></button>
+    </div>
+    <div class="container" id="currentObject">
+      <h2>Current <i class="fas fa-file"></i></h2>
+      <p class="draggable" draggable="true">3</p>
+      <p class="draggable" draggable="true">4</p>
+    </div>
+    <div class="container" id="overdueObject">
+      <h2>Overdue <i class="fas fa-dumpster-fire"></i></h2>
+      <p class="draggable" draggable="true">7</p>
+      <p class="draggable" draggable="true">8</p>
+    </div>
+    <div class="container" id="completedObject">
+      <h2>Completed <i class="fas fa-check-square"></i> </h2>
+      <p class="draggable" draggable="true">5</p>
+      <p class="draggable" draggable="true">6</p>
+    </div>
+  </body>
+</html>
