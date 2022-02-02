@@ -1,8 +1,16 @@
-nav {
-  background-color: #7c8bff;
+body {
+  font-family: monaco;
 }
-
+nav {
+  background-color: #1c2cba;
+  border-radius: 25%;
+}
+nav a {
+  color: aliceblue !important;
+  font-family: monaco;
+  font-style: normal;
+  font-variant: normal;
+}
 footer {
-  background-color: #7c8bff;
   text-align: center;
 }
