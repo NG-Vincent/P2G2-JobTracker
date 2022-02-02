@@ -13,24 +13,24 @@
     <div class="settings-section">
       <h2 class="settings-title">General Information</h2>
       <div class="non-active-form">
-        <p>Job role:</p>
+        <p>Job role: {{userData.role}}</p>
         <i class="fas fa-pen"></i>
       </div>
       <div>
         <div class="non-active-form">
-          <p class="capitalize">Name: Test Name</p>
+          <p class="capitalize">Name: {{userData.username}}</p>
           <i class="fas fa-pen"></i>
         </div>
       </div>
       <div>
         <div class="non-active-form">
-          <p class="capitalize">Info:</p>
+          <p class="capitalize">Info: {{userData.info}}</p>
           <i class="fas fa-pen"></i>
         </div>
       </div>
       <div>
         <div class="non-active-form">
-          <p>Email: bianca@test.com</p>
+          <p>Email: {{userData.email}}</p>
           <i class="fas fa-pen"></i>
         </div>
       </div>
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="form-submit right">
-          <button class="btn button full" type="submit" disabled="">
+          <button class="btn button full" type="submit">
             Change Password
           </button>
         </div>
