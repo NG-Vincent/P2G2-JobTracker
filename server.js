@@ -26,12 +26,13 @@ const sess = {
 // run server
 const app = express();
 const PORT = process.env.PORT || 3001;
-// session
-app.use(session(sess));
+
 // general
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+// session
+app.use(session(sess));
 app.use(routes);
 
 // handlebars
