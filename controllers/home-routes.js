@@ -1,19 +1,46 @@
 const router = require("express").Router();
-const {} = require("../models");
+const { User } = require("../models");
 
 // GET LOGIN PAGE
 router.get("/", (req, res) => {
-  res.render("login");
+   res.render("login");
 });
 
 // GET KANBAN PAGE
 router.get("/kanban", (req, res) => {
-  res.render("kanban", { layout: "kanban", url: "/" });
+   res.render("kanban", { layout: "kanban", url: "/" });
 });
 
 // GET ACCOUNT-SETTINGS PAGE
 router.get("/account", (req, res) => {
-  res.render("account");
+   User.findOne({
+      attributes: {
+         // don't show password
+         exclude: ["password"],
+      },
+      where: {
+         id: req.session.user_id,
+      },
+   })
+      .then((dbUserData) => {
+         if (!dbUserData) {
+            res.status(404).json({ message: "No user found with this id" });
+            return;
+         }
+
+         // serialize data before passing to template
+         const userData = dbUserData.get({ plain: true });
+
+         // pass data to template
+         res.render("account", {
+            userData,
+            loggedIn: req.session.loggedIn,
+         });
+      })
+      .catch((err) => {
+         console.log(err);
+         res.status(500).json(err);
+      });
 });
 
 module.exports = router;
