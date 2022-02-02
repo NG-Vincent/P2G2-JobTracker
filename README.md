@@ -15,11 +15,11 @@
 
 ## Description
 
-An application that allows users to login with a personal account and access a calendar, and kanban board to keep up to date with their tasks and as well as the teams tasks. The app allows users to update tasks from in progress to complete
+An application that allows users to login with a personal login. This gives access to a calendar, and kanban board which allows them to keep up to date with their tasks as well as their teams tasks. The app allows users to update tasks from in Current, Completed and Overdue
 
 ## Installation
 
-"npm install" to get dependencies which include: bcrypt, connect-session-sequelize, dotenv, express,express-handlebars, express-session, mysql2, and sequelize
+"npm install" to download dependencies which include: bcrypt, connect-session-sequelize, dotenv, express,express-handlebars, express-session, mysql2, and sequelize
 
 ## Usage
 
@@ -27,7 +27,7 @@ An application that allows users to login with a personal account and access a c
 
 ## Contributors
 
-Adam Campeau,Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent Nguyen
+Adam Campeau, Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent Nguyen
 
 ---
 
@@ -39,7 +39,7 @@ Adam Campeau,Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent 
 
 ## Username
 
-Github repo can be view at NG-Vincent/P2G2-JobTracker
+Github repo can be viewed at NG-Vincent/P2G2-JobTracker
 
 ## Preview
 
