@@ -10,6 +10,7 @@ nav {
   background-size: contain;
   background-repeat: no-repeat;
   margin-bottom: 1rem;
+  border-radius: 25%;
 }
 
 nav ul {

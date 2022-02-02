@@ -3,6 +3,7 @@ body {
 }
 nav {
   background-color: #1c2cba;
+  border-radius: 25%;
 }
 nav a {
   color: aliceblue !important;
