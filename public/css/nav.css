@@ -31,6 +31,14 @@ nav ul li a:hover {
 
 /* Login page header */
 header {
-  background-color: #7c8bff;
-  padding: 1rem 0;
+  background-color: #1c2cba;
+  color: aliceblue;
+  padding: 20px;
+  border-radius: 25%;
+  font-family: monaco;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  line-height: 16px;
 }
