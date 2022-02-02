@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
 
       if (response.ok) {
-         document.location.replace("/kanban");
+         document.location.replace("/calendar");
       } else {
          alert(response.statusText);
       }
