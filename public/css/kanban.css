@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: #7c8bff;
+  /* text-align: center; */
 }
 
 .container {
@@ -14,6 +15,7 @@ body {
   border: 1px solid black;
   padding: 1rem;
   cursor: move;
+  margin-bottom: 1rem;
 }
 
 .draggable.dragging {
@@ -42,4 +44,8 @@ body {
   background-color: #ffe7e0;
   height: auto;
   width: 100%;
+}
+
+footer {
+  text-align: center;
 }

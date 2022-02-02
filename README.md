@@ -33,7 +33,11 @@ Adam Campeau, Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent
 
 ## License
 
+<<<<<<< HEAD
 ![License](https://img.shields.io/badge/license--blue.svg)
+=======
+![Lisence](https://img.shields.io/badge/MIT--purple.svg)
+>>>>>>> 7664a49c3340f73f84a5c5ab136107c65c9a6bcc
 
 ---
 

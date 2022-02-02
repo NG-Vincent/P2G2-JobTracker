@@ -6,11 +6,24 @@ async function dragNDropSystem() {
     })
     .then((data) => {
       data.forEach((task) => {
+        const div = document.createElement("div");
         const p = document.createElement("p");
-        p.setAttribute("draggable", true);
-        p.classList.add("draggable", "task-description");
+        const btn1 = document.createElement("button");
+        const btn2 = document.createElement("button");
+        const iEdit = document.createElement("i");
+        const iTrash = document.createElement("i");
+
+        div.setAttribute("draggable", true);
+        div.classList.add("draggable");
+        p.classList.add("task-description");
+        iEdit.classList.add("fas", "fa-edit");
+        iTrash.classList.add("fas", "fa-trash");
         p.textContent = task.description;
-        newTaskContainer.append(p);
+
+        btn1.append(iEdit);
+        btn2.append(iTrash);
+        div.append(p, btn1, btn2);
+        newTaskContainer.append(div);
       });
     })
     .catch((err) => {
