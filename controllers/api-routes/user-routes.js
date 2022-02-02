@@ -33,13 +33,10 @@ router.post("/", (req, res) => {
 
 // Will need to move this out of this folder
 router.post("/login", (req, res) => {
-  console.log(req.session.username);
   User.findOne({
-    where: { username: req.session.username },
+    where: { username: req.body.username },
   })
     .then((dbUserData) => {
-      console.log(req.session.username);
-      console.log(dbUserData);
       if (!dbUserData) {
         res.status(404).json("No account");
         return;
