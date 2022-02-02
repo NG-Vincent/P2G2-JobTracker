@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-color: #7c8bff;
+  background-color: white;
+  font-family: monaco;
   /* text-align: center; */
 }
 
@@ -48,4 +49,5 @@ body {
 
 footer {
   text-align: center;
+  font-family: monaco;
 }

@@ -1,12 +1,19 @@
+body {
+  font-family: monaco;
+  font-size: 20px;
+  font-style: normal;
+  font-variant: normal;
+}
+
 nav {
   background: none;
-  background-color: #7c8bff;
+  background-color: #1c2cba;
   padding: 3rem 0;
   width: 100%;
+  border-radius: 25%;
 }
 
 footer {
-  background-color: #7c8bff;
   text-align: center;
 }
 
@@ -27,6 +34,8 @@ nav ul li:not(:last-of-type) {
 nav ul li a {
   text-decoration: none;
   color: initial;
+  margin: 25px;
+  color: aliceblue;
 }
 
 nav ul li a:hover {

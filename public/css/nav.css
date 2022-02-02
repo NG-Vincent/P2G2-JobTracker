@@ -1,4 +1,5 @@
 nav {
+  background-color: #1c2cba;
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -20,7 +21,8 @@ nav ul li {
 }
 
 nav ul li a {
-  color: initial;
+  color: aliceblue;
+  font-family: monaco;
   font-size: 1.3rem;
   text-decoration: none;
 }
