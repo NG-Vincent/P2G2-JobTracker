@@ -1,0 +1,34 @@
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.row{
+    margin-bottom: 50px;
+}
+
+.form-group btn{
+    margin-top: 10px;
+}
+
+.del btn-danger{
+    display: initial;
+    width: 200px;
+    margin-left: 5px;
+ margin-right: 5px;
+}
+
+.started{
+    color:white;
+    font-weight: bold;
+    background: yellowgreen;
+    padding: 5px;
+    border-radius: 5px;
+}
+.completed{
+    color: white;
+    font-weight: bold;
+    background: wheat;
+    padding: 5px;
+    border-radius: 5px;
+}

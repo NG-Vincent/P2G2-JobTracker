@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Task Manage</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTaskModal">Add Task</button>
+            </div>
+        </div>
+    </div>
+<!--to add task and project-->
+<div class="modal fade" id="addTaskModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+     <div class="modal-header">
+     <h5 class="modal-title">Add Task</h5>
+     <button class="close" type="button" data-dismiss="modal">Close</button>
+   </div>
+   <div class="modal-body">
+       <form method="Post" onsubmit="return taskObj.AddTask(this);" id="form-task-hour-calculator">
+    <!--project already created-->
+        <div class="form-group">
+        <label>Project</label>
+        <select name="project" id="add-task-project" class="form-control" required></select>
+    </div>
+    <!--new project-->
+<div class="form-group">
+    <label>New Project</label>
+    <input type="text" name="new_project" id="add-project" class="form-control" placeholder="project-Name">
+    <button type="button" onclick="taskObj.addProject();" class="btn btn-primary"> Add Button</button>
+</div>
+    <!--for task-->
+    <div class="form-group">
+        <label>Task</label>
+<input type="text" name="task" class="form-control" placeholder="what to do?"required/>
+
+    </div>
+
+    </form>
+   </div>
+   <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <button type="button" form="form-task-hour-calculator" class="btn btn-primary">Add Task</button>
+      
+    </div>
+</div>
+</div>
+</div>
+ <!-- show all tasks-->
+ <table class="table">
+    <caption class="text-center">All Tasks</caption>
+    <tr>
+        <th>Task</th>
+        <th>Project</th>
+        <th>Duration</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Action</th>
+
+    </tr>
+    <tbody id="all-tasks"></tbody>
+</table>
+<!--delete Project-->
+<div class="del">
+<form method="Post" onsubmit="return taskObj.deleteProject(this);"style="display:content;">
+<select name="project" class="form-control" id="form-task-hour-calculator-all-projects"></select>
+<input type="submit" class="btn btn-danger" value="Delete Project">
+</form>
+</div>
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" >  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script scr="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
