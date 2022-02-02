@@ -3,20 +3,20 @@ body {
   background-color: #7c8bff;
 }
 
-header {
+nav {
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
-  background-image:url("../images/p2j2.jpg");
-  background-size: cover;
+  background-image: url("../images/p2j2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-header h1 {
+nav h1 {
   font-weight: bold;
-
 }
 
 .container {

@@ -4,10 +4,6 @@ const form = document.querySelector(".calendar--form");
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
-// Input Fields
-const input_title = document.querySelector(".calendar--title");
-const input_time = document.querySelector(".calendar--time");
-const input_description = document.querySelector(".calendar--description");
 
 // Configuration options for calendar
 function createEvent() {
@@ -15,7 +11,7 @@ function createEvent() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: "dayGridMonth",
-    initialDate: "2022-01-07",
+    initialDate: "2022-02-02",
     headerToolbar: {
       left: "prev,next today",
       center: "title",
@@ -60,6 +56,10 @@ fetch("/api/calendar")
 
 // Function that adds new events (tasks)
 function addEvent() {
+  // Input Fields
+  const input_title = document.querySelector(".calendar--title");
+  const input_time = document.querySelector(".calendar--time");
+  const input_description = document.querySelector(".calendar--description");
   fetch("/api/calendar", {
     method: "POST",
     headers: {
