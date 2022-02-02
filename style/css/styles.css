@@ -43,3 +43,26 @@ body {
   height: auto;
   width: 100%;
 }
+
+
+footer{
+  background: #fce138;
+  width: 100%;
+  padding: 70px 35px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+
+footer h2 {
+  color: #024e76;
+  font-size: 30px;
+  margin: 0;
+  
+}
+footer div {
+  line-height: 1.5;
+  text-align: right;
+  color: #024e76;
+}
