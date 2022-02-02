@@ -3,7 +3,7 @@ body {
   background-color: #7c8bff;
 }
 
-header {
+nav {
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -11,10 +11,11 @@ header {
   position: sticky;
   position: -webkit-sticky;
   background-image:url("../images/p2j2.jpg");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-header h1 {
+nav h1 {
   font-weight: bold;
 
 }
