@@ -43,4 +43,14 @@ router.get("/account", (req, res) => {
       });
 });
 
+// logout
+router.get("/logout", (req, res) => {
+   if (req.session.loggedIn) {
+      req.session.destroy(() => {
+         res.status(204).end();
+      });
+   }
+   res.redirect("/");
+});
+
 module.exports = router;

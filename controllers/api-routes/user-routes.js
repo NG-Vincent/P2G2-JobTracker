@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
       });
 });
 
-// Will need to move this out of this folder
+// login
 router.post("/login", (req, res) => {
    console.log(req.session.username);
    User.findOne({
