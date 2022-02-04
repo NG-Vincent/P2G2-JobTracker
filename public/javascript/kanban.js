@@ -31,6 +31,8 @@ async function dragNDropSystem() {
             btn1.append(iEdit);
             btn2.append(iTrash);
             div.append(h3, p, btn1, btn2);
+
+            // append to proper element
             document.querySelector(`#${task.status}Object`).append(div);
          });
       })
@@ -52,7 +54,7 @@ async function dragNDropSystem() {
       // Gets fired as soon as dragging stops
       draggable.addEventListener("dragend", () => {
          draggable.classList.remove("dragging");
-         // get variables
+         // get new status
          const newStatus = draggable.parentElement
             .getAttribute("id")
             .replace("Object", "");
