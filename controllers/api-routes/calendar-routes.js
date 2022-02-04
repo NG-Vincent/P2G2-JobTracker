@@ -3,19 +3,18 @@ const { User, Calendar } = require("../../models");
 
 // Get all calendar events
 router.get("/", (req, res) => {
-  Calendar.findAll({
-    attributes: ["id", "title", "start", "description"],
-    // include: {
-    //   model: User,
-    //   attributes: ["id", "username"],
-    // },
-  })
-    .then((dbCalendarData) => {
-      res.status(200).json(dbCalendarData);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+   Calendar.findAll({
+      // include: {
+      //   model: User,
+      //   attributes: ["id", "username"],
+      // },
+   })
+      .then((dbCalendarData) => {
+         res.status(200).json(dbCalendarData);
+      })
+      .catch((err) => {
+         res.status(500).json(err);
+      });
 });
 
 // Get a single calendar event
@@ -35,41 +34,41 @@ router.get("/", (req, res) => {
 
 // Create calendar event
 router.post("/", (req, res) => {
-  console.log(req.body);
-  Calendar.create({
-    // user_id: req.session.user_id,
-    title: req.body.title,
-    start: req.body.start,
-    description: req.body.description,
-  })
-    .then((dbCalendarData) => {
-      res.status(201).json(dbCalendarData);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+   console.log(req.body);
+   Calendar.create({
+      // user_id: req.session.user_id,
+      title: req.body.title,
+      start: req.body.start,
+      description: req.body.description,
+   })
+      .then((dbCalendarData) => {
+         res.status(201).json(dbCalendarData);
+      })
+      .catch((err) => {
+         res.status(500).json(err);
+      });
 });
 
 // Update calendar events
-// router.put("/", (req, res) => {
-//   Calendar.update(
-//     {
-//       title: req.body.title,
-//       start: req.body.start,
-//       description: req.body.description,
-//     },
-//     {
-//       where: { groupId: req.body.groupId },
-//       limit: 1,
-//     }
-//   )
-//     .then((dbCalendarData) => {
-//       res.status(200).json(dbCalendarData);
-//     })
-//     .catch((err) => {
-//       res.status(500).json(err);
-//     });
-// });
+router.put("/:id", (req, res) => {
+   Calendar.update(
+      {
+         title: req.body.title,
+         start: req.body.start,
+         description: req.body.description,
+         status: req.body.status,
+      },
+      {
+         where: { id: req.params.id },
+      }
+   )
+      .then((dbCalendarData) => {
+         res.status(200).json(dbCalendarData);
+      })
+      .catch((err) => {
+         res.status(500).json(err);
+      });
+});
 
 // Delete calendar events
 // Don't have anyway to select an event to delete

@@ -1,5 +1,4 @@
 async function dragNDropSystem() {
-   const newTaskContainer = document.querySelector("#newObject");
    await fetch("/api/calendar")
       .then((res) => {
          return res.json();
@@ -8,26 +7,31 @@ async function dragNDropSystem() {
          data.forEach((task) => {
             console.log(task);
             const div = document.createElement("div");
+            const h3 = document.createElement("h3");
             const p = document.createElement("p");
             const btn1 = document.createElement("button");
             const btn2 = document.createElement("button");
             const iEdit = document.createElement("i");
             const iTrash = document.createElement("i");
 
-            // id from sql
-            div.setAttribute("data-id", task.id);
+            // data from sql
+            div.dataset.id = task.id;
+            div.dataset.start = task.start;
+            div.dataset.title = task.title;
+            div.dataset.description = task.description;
 
             div.setAttribute("draggable", true);
             div.classList.add("draggable");
             p.classList.add("task-description");
             iEdit.classList.add("fas", "fa-edit");
             iTrash.classList.add("fas", "fa-trash");
+            h3.textContent = task.title;
             p.textContent = task.description;
 
             btn1.append(iEdit);
             btn2.append(iTrash);
-            div.append(p, btn1, btn2);
-            newTaskContainer.append(div);
+            div.append(h3, p, btn1, btn2);
+            document.querySelector(`#${task.status}Object`).append(div);
          });
       })
       .catch((err) => {
@@ -48,7 +52,23 @@ async function dragNDropSystem() {
       // Gets fired as soon as dragging stops
       draggable.addEventListener("dragend", () => {
          draggable.classList.remove("dragging");
-         console.log(draggable.getAttribute("data-id"));
+         // get variables
+         const newStatus = draggable.parentElement
+            .getAttribute("id")
+            .replace("Object", "");
+         // api call to update status in database
+         fetch(`/api/calendar/${draggable.dataset.id}`, {
+            method: "PUT",
+            body: JSON.stringify({
+               start: draggable.dataset.start,
+               title: draggable.dataset.title,
+               description: draggable.dataset.description,
+               status: newStatus,
+            }),
+            headers: {
+               "Content-Type": "application/json",
+            },
+         });
       });
    });
 
