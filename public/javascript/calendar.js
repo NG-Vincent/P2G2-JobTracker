@@ -37,12 +37,16 @@ function createEvent() {
       });
     },
     events: "/api/calendar",
+    // eventRender: function (info) {
+    //   console.log(info.event.extendedProps.status);
+    // },
   });
 
   calendar.render();
 }
 
 // Fetches data, passes it into function that creates calendar
+// Note that technically, we don't need this fetch since  events: "/api/calendar" is making an XML-HTTP-REQUEST, we could just run createEvent()
 fetch("/api/calendar")
   .then((res) => {
     return res.json();
@@ -93,39 +97,6 @@ document.body.addEventListener("click", (e) => {
     window.location.replace("/kanban");
   }
 });
-
-// UPDATE EVENT
-// document.body.addEventListener("click", (e) => {
-//   const chosenEvent = e.target;
-//   if (chosenEvent.classList.contains("fc-event-title")) {
-//     fetch("/api/calendar", {
-//       method: "PUT",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({
-//         groupId: input_groupId.value,
-//         title: `Id:${input_groupId.value} Task:${input_title.value}`,
-//         // start: input_time.value,
-//         // content: input_content.value,
-//       }),
-//     });
-
-//     alert("Event Updated");
-//     // window.location.reload();
-//   }
-// });
-
-// DELETE ~ CAN'T DO ANYTHING ABOUT IT WITHOUT A PROPER METHOD TO SELECT THE EVENT
-// document.body.addEventListener("dblclick", (e) => {
-//   const chosenEvent = e.target;
-//   if (chosenEvent.classList.contains("fc-event-title")) {
-//     fetch("/api/calendar", {
-//       method: "DELETE",
-//       headers: { "Content-Type": "application/json" },
-//     });
-//     alert("Event Deleted");
-//     window.location.reload();
-//   }
-// });
 
 //////////////////////////////////////////////////////////////////
 // MODAL FORM
