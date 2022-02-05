@@ -2,34 +2,60 @@
 
 ## Table of Contents
 
+## Screenshot and live URL
+
+[URL to live app](https://safe-cove-20593.herokuapp.com/)
+
+![calendar](./public/images/calendar.png)
+![kanban](./public/images/kanban.png)
+
 ---
 
-- ## [Description](#Description)
-- ## [Installation](#Installation)
-- ## [Usage](#usage)
-- ## [Contributors](#Contributors)
-- ## [License](#License)
-- ## [Username](#Username)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [License](#license)
+- [Contributions](#contributions)
 
 ---
 
 ## Description
 
-An application that allows users to login with a personal login. This gives access to a calendar, and kanban board which allows them to keep up to date with their tasks as well as their teams tasks. The app allows users to update tasks from in Current, Completed and Overdue
+An application that allows a group or company to create, organize and view tasks as the well as the tasks of their fellow employee's
 
 ## Installation
 
-"npm install" to download dependencies which include: bcrypt, connect-session-sequelize, dotenv, express,express-handlebars, express-session, mysql2, and sequelize
+In order to use this, Node.js and mySql are required.
+
+Open your Command Line Interface and go to the root directory of this project and type `npm install` to install the dependencies. Afterwards, type `npm run start` in order to start the server
 
 ## Usage
 
-"npm start" to start server and access app
+Go to your web browser and type `localhost:3001` and you will be brought to the login page
 
-## Contributors
+After choosing your username and password and clicking on the signup button, an alert will confirm that your account has been created
 
-Adam Campeau, Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent Nguyen
+After you've logged in you will be taken to the calendar page, here you can click on the `Add Task` button on the bottom of the page and then you can add the task or job you need to do, a date which will be in the following format, `YYYY-MM-DDT15:00:00` (_where 15:00:00 stands for 3pm_), and a description of the job
 
----
+After submitting the task details, an alert will let you know that it has been created and you will be able to see it on the calendar, if you hover over the task then a tooltip with the description will appear and if you click on it then you will be directed to a kanban board with all of the task descriptions on it which you can drag and drop to the appropriate status column and it will persist even if you refresh the page
+
+You can navigate between the calendar, kanban and account settings page through the links on the top right
+
+On the account settings page you will see your current information and a form to be able to change your password (_Not functional as of yet_)
+
+You can logout by pressing the `logout` button on the top right of the page
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express.js
+- Express.handlebars
+- mySql
+- fullCalendar
 
 ## License
 
@@ -37,10 +63,8 @@ Adam Campeau, Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent
 
 ---
 
-## Username
+## Contributions
 
-Github repo can be viewed at NG-Vincent/P2G2-JobTracker
+Adam Campeau, Bianca Chami, Daniel Arzanipour, Jie Wei, Pawanpreet Kaur, Vincent Nguyen
 
-## Preview
-
-TBD
+---
