@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  background-color: white;
+  font-family: monaco;
+  /* text-align: center; */
+}
+
+.container {
+  background-color: #333;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.draggable {
+  background-color: white;
+  border: 1px solid black;
+  padding: 1rem;
+  cursor: move;
+  margin-bottom: 1rem;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+#newObject {
+  background-color: #e7f8d8;
+  height: auto;
+  width: 100%;
+}
+
+#currentObject {
+  background-color: #fffde3;
+  height: auto;
+  width: 100%;
+}
+
+#completedObject {
+  background-color: #d5e2ef;
+  height: auto;
+  width: 100%;
+}
+
+#overdueObject {
+  background-color: #ffe7e0;
+  height: auto;
+  width: 100%;
+}
+
+footer {
+  text-align: center;
+  font-family: monaco;
+}

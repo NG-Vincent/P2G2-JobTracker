@@ -1,0 +1,36 @@
+<nav>
+  <h2></h2>
+  <ul>
+    <li><a href="/account">Account settings</a></li>
+    <li><a href="/kanban">Dashboard</a></li>
+    <li><a href="/">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- Calendar -->
+<div id="calendar"></div>
+
+<button class="open-button" data-modal-target="#modal-form">
+  Add Task
+</button>
+<form id="modal-form" class="calendar--form modal">
+  <div class="modal-inputs">
+    <input
+      class="calendar--title"
+      type="text"
+      placeholder="Job at Pearson Airport"
+    />
+    <input class="calendar--time" type="text" value="2022-02-02T09:00:00" />
+    <input
+      class="calendar--description"
+      type="text"
+      placeholder="Need to repair vending machine"
+    />
+  </div>
+
+  <button type="submit">Submit</button>
+  <button type="button" data-close-button class="close-button">
+    Close
+  </button>
+</form>
+<div id="overlay"></div>

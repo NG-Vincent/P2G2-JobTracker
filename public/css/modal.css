@@ -1,0 +1,232 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  /* As user scrolls, the modal will follow them */
+  position: fixed;
+  /* For centering modal */
+  top: 50%;
+  left: 50%;
+  /* Also hides the modal */
+  /* We use scale instead of display: none so we we can smoothly transition the modal */
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+
+  border: 1px solid black;
+  border-radius: 10px;
+
+  /* We want modal to be on top of everything else */
+  z-index: 10;
+
+  /* So modal doesn't blend in with overlay */
+  background-color: white;
+
+  /* We don't want the modal to expand past 80% of the screen */
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid black;
+  padding: 10px 15px;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: bold;
+  outline: none;
+}
+
+.modal-body {
+  padding: 10px 15px;
+}
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  opacity: 0;
+  /* Fill up entire screen */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* So that when our overlay is invisible then it won't capture our click events */
+  pointer-events: none;
+
+  transition: 200ms ease-in-out;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Modal Form */
+
+#modal-form div {
+  margin: 0 auto;
+  padding: 1rem;
+
+  width: 100%;
+}
+
+#modal-form input {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+#modal-form button,
+.open-button {
+  border: none;
+  border-radius: 1em;
+  font-size: 1rem;
+  padding: 1em 2em;
+  margin: 1rem 0;
+  margin-left: 1rem;
+  transform: all 250ms;
+}
+
+#modal-form button:hover,
+.open-button:hover {
+  background-color: hsl(0, 0%, 84%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+#modal-form button:active,
+.open-button:active {
+  background-color: hsl(0, 0%, 74%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(2px);
+}
+
+.calendar--title,
+.calendar--time,
+.calendar--description {
+  margin: 1rem 0;
+  border-radius: 0.5em;
+}
+
+.modal-inputs {
+  width: 80%;
+}
+
+/* TOOLTIP */
+
+.popper,
+.tooltip {
+  position: absolute;
+  z-index: 9999;
+  background: #ffc107;
+  color: black;
+  width: 150px;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: center;
+}
+.style5 .tooltip {
+  background: #1e252b;
+  color: #ffffff;
+  max-width: 200px;
+  width: auto;
+  font-size: 0.8rem;
+  padding: 0.5em 1em;
+}
+.popper .popper__arrow,
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 5px;
+}
+
+.tooltip .tooltip-arrow,
+.popper .popper__arrow {
+  border-color: #ffc107;
+}
+.style5 .tooltip .tooltip-arrow {
+  border-color: #1e252b;
+}
+.popper[x-placement^="top"],
+.tooltip[x-placement^="top"] {
+  margin-bottom: 5px;
+}
+.popper[x-placement^="top"] .popper__arrow,
+.tooltip[x-placement^="top"] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.popper[x-placement^="bottom"],
+.tooltip[x-placement^="bottom"] {
+  margin-top: 5px;
+}
+.tooltip[x-placement^="bottom"] .tooltip-arrow,
+.popper[x-placement^="bottom"] .popper__arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tooltip[x-placement^="right"],
+.popper[x-placement^="right"] {
+  margin-left: 5px;
+}
+.popper[x-placement^="right"] .popper__arrow,
+.tooltip[x-placement^="right"] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.popper[x-placement^="left"],
+.tooltip[x-placement^="left"] {
+  margin-right: 5px;
+}
+.popper[x-placement^="left"] .popper__arrow,
+.tooltip[x-placement^="left"] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
