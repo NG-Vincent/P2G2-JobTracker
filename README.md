@@ -4,7 +4,7 @@
 
 ## Screenshot and live URL
 
-[URL to live app](https://safe-cove-20593.herokuapp.com/)
+https://safe-cove-20593.herokuapp.com
 
 ![calendar](./public/images/calendar.png)
 ![kanban](./public/images/kanban.png)
